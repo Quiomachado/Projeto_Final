@@ -4,6 +4,7 @@
 #define PI 3.14
 
 int main() {
+    int lim;
     double v0, d, rang, c, r, cp, cl, h, ang;
     printf("Introduza a velocidade inicial:");
     scanf("%lf", &v0);
@@ -15,14 +16,19 @@ int main() {
     ang = 0.0;
     cp = c - r;
     cl = c + r;
+    lim = 0;
     /*c = ((pow(v0, 2)*sin(2*rang))/g);*/
     while (ang <= 90){
         rang = ang * (PI/180);
         h=(pow(v0, 2)*sin(2*rang))/g;
         if((cp<=h) && (h<=cl)) {
             printf("\nO valor do angulo pode ser %.2f.", ang);
+            lim++;
         }
     ang=ang +0.1;
+    }
+    if(lim==0){
+        printf("\nA bola nao cai no cesto.");
     }
     return 0;
 }
