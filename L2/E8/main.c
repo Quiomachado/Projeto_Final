@@ -20,9 +20,9 @@ int main() {
         rang = ang * (PI/180);
         h=(pow(v0, 2)*sin(2*rang))/g;
         if((cp<=h) && (h<=cl)) {
-            printf("\nO valor do angulo pode ser %f.", ang);
+            printf("\nO valor do angulo pode ser %.2f.", ang);
         }
-    ang++;
+    ang=ang +0.1;
     }
     return 0;
 }
