@@ -8,6 +8,5 @@ int main() {
     printf("Introduza o numero:");
     scanf("%lf", &ni);
     printf("%.*f",l, ni);
-
     return 0;
 }
