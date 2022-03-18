@@ -9,7 +9,7 @@ int main (){
     printf("Introduza o seu numero: ");
     scanf("%d", &num);
     while(num>=i){
-        r= num%i;
+        r = num%i;
         if(r==0){
             printf("%d ", i);
         }
