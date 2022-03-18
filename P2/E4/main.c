@@ -5,6 +5,7 @@
 int main(){
     char in[50];
     int i;
+    printf("Introduza a sua frase: \n");
     fgets(in, sizeof(in), stdin);
     for (i = 0; in[i]!='\0'; i++)
     {       
