@@ -8,16 +8,15 @@ int comb(int x, int y);
 int main()
 {
    int i, k, n, space;
-   k = 0;
    printf("Introduza n: ");
    scanf("%d", &n);
    for(i=1;i<=n;++i, k=0){
        for(space=1; space <= n-i; ++space){
-           printf("  ");
+           printf(" ");
        }
-       while(k != 2 * i - 1){
+       for(k=0;k<=i;k++)
+       {
            printf("%d ", comb(i,k));
-            ++k;
        }
        printf("\n");
    }
