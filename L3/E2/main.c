@@ -11,9 +11,6 @@ int main()
    printf("Introduza n: ");
    scanf("%d", &n);
    for(i=0;i<=n;i++, k=0){
-       for(space=1; space <= n-i; ++space){
-           printf(" ");
-       }
        for(k=0;k<=i;k++)
        {
            printf("%d ", comb(i,k));
