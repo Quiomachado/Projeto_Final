@@ -5,6 +5,7 @@
 
 void ini_vector(int, int []);
 void coder(int , int [], int []);
+void decoder(int []);
 int main(){
     int n;
     int vect[MAX_SIZE], vectcod[MAX_SIZE];
@@ -12,6 +13,7 @@ int main(){
     scanf("%d", &n);
     ini_vector(n, vect);
     coder(n, vect, vectcod);
+    decoder(vectcod);
     return EXIT_SUCCESS;
 }
 
@@ -43,4 +45,14 @@ void coder(int n, int vect[], int vectcod[]){
     }
     printf("\n");
     return;
+}
+
+void decoder(int vectcod[]){
+    int i=0, j=0;
+    while(vectcod[i] != '\0'){
+        for(j=vectcod[i]; j>0; j--){
+            printf("%d", vectcod[i+1]);
+        }
+        i+=2;
+    }
 }
