@@ -4,14 +4,14 @@
 #define MAX_SIZE 256
 
 int *ini_vector(int n);
-void str_dig(int n, int vect[]);
+void coder(int n, int vect[]);
 int main(){
     int n;
     printf("Introduza quantos numeros inteiros prentende introduzir:\n");
     scanf("%d", &n);
     int* vector;
     vector = ini_vector(n);
-    str_dig(n, vector);
+    coder(n, vector);
     return EXIT_SUCCESS;
 }
 
@@ -32,11 +32,25 @@ int *ini_vector(int n){
 
 void coder(int n, int vect[]){
     int str[n];
-    int i,j;
+    int i,j,l;
+    int aux;
+    int count = 1;
     char awnser[n];
     for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            
+        aux=0;
+        count=1;
+        for(j=i+1;j<n;j++){
+            if(vect[i]==vect[j]){
+                aux=1;
+            }
+        }
+        if(aux == 1){
+            //printf("%d", vect[i]);
+            count++;
+            printf("%d%d ", count, vect[i]);
+        }
+        if(aux == 0){
+            printf("%d%d ", count, vect[i]);
         }
     }
 }
