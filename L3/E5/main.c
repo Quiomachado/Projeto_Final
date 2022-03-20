@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <math.h>
 
-int SieveOfEratosthenes();
+void SieveOfEratosthenes();
 
 int main(){
     SieveOfEratosthenes();
 }
 
-int SieveOfEratosthenes(){
+void SieveOfEratosthenes(){
     int n,i, j;
     printf("Introduza um numero inteiro positivo entre 1 e 1000: \n");
     scanf("%d", &n);
