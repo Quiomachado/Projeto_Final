@@ -7,7 +7,7 @@ int comb(int x, int y);
 
 int main()
 {
-   int i, k, n, space;
+   int i, k, n;
    printf("Introduza n: ");
    scanf("%d", &n);
    for(i=0;i<=n;i++, k=0){
