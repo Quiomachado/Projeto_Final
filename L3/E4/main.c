@@ -42,11 +42,11 @@ void coder(int n, int vect[]){
         for(j=i+1;j<n;j++){
             if(vect[i]==vect[j]){
                 aux=1;
+                count++;
             }
         }
         if(aux == 1){
             //printf("%d", vect[i]);
-            count++;
             printf("%d%d ", count, vect[i]);
         }
         if(aux == 0){
