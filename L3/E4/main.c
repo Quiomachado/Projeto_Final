@@ -1,24 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX_SIZE 256
+#define MAX_SIZE 1000
 
-int *ini_vector(int n);
-void coder(int n, int vect[]);
+void ini_vector(int, int []);
+void coder(int , int [], int []);
 int main(){
     int n;
+    int vect[MAX_SIZE], vectcod[MAX_SIZE];
     printf("Introduza quantos numeros inteiros prentende introduzir:\n");
     scanf("%d", &n);
-    int* vector;
-    vector = ini_vector(n);
-    coder(n, vector);
+    ini_vector(n, vect);
+    coder(n, vect, vectcod);
     return EXIT_SUCCESS;
 }
 
-int *ini_vector(int n){
+void ini_vector(int n, int vect[]){
     int i;
-    static int* vect;
-    vect = malloc(MAX_SIZE * sizeof(int));
     for(i=0; i<n; i++){
         printf("Introduza o %d valor:\n", i+1);
         scanf("%d", &vect[i]);
@@ -27,30 +25,22 @@ int *ini_vector(int n){
             scanf("%d", &vect[i]);
         }
     }
-    return vect;
+    return;
 }
 
-void coder(int n, int vect[]){
-    int str[n];
-    int i,j,l;
-    int aux;
-    int count = 1;
-    char awnser[n];
-    for(i=0;i<n;i++){
-        aux=0;
-        count=1;
-        for(j=i+1;j<n;j++){
-            if(vect[i]==vect[j]){
-                aux=1;
-                count++;
-            }
-        }
-        if(aux == 1){
-            //printf("%d", vect[i]);
-            printf("%d%d ", count, vect[i]);
-        }
-        if(aux == 0){
-            printf("%d%d ", count, vect[i]);
+void coder(int n, int vect[], int vectcod[]){
+    int i=0, counter=1, j=0;
+    for(i=0; i<n;i++){
+        if(vect[i]==vect[i+1]){
+            counter++;
+        }else{
+            vectcod[j] = counter;
+            vectcod[j+1] = vect[i];
+            printf("%d%d", vectcod[j], vectcod[j+1]);
+            j += 2;
+            counter = 1;
         }
     }
+    printf("\n");
+    return;
 }
