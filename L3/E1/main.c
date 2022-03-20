@@ -18,11 +18,11 @@ int main(){
         printf("A sua resposta esta errada tente de novo: \n");
         scanf("%d", &input);
         if(input == 0){
-            return 1;
+            return EXIT_SUCCESS;
         }
     }
     if(input == awn){
         printf("A sua resposta esta correta!");
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
