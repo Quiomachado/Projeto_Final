@@ -17,8 +17,7 @@ void SieveOfEratosthenes(){
         for(i=2; i<=n;i++){
             primos[i]=i;
         }
-        i=2;
-        while((i*i)<=n){
+        for(i=2;(i*i)<=n;i++){
             if(primos[i]!= 0){
                 for(j=2;j<n;j++){
                     if(primos[i]*j > n)
@@ -27,7 +26,6 @@ void SieveOfEratosthenes(){
                         primos[primos[i]*j]=0;
                 }
             }
-            i++;
         }
         for(i=2; i<=n; i++){
             if(primos[i]!=0)
