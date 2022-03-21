@@ -55,4 +55,5 @@ void decoder(int vectcod[]){
         }
         i+=2;
     }
+    return;
 }
