@@ -16,6 +16,7 @@ int main(){
         FlagMultipleNumbers(n, sq, primos);
     }else
         printf("Nao introduziu um valor valido.");
+    return EXIT_SUCCESS;
 }
 
 int SieveOfEratosthenes(int n, int primos[]){
