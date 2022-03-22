@@ -30,7 +30,7 @@ int SieveOfEratosthenes(int n, int primos[]){
 
 void FlagMultipleNumbers (int n, int sq, int primos[]){
     int i, j;
-    for(i=2;(i*i)<=n;i++){
+    for(i=2;i<=sq;i++){
         if(primos[i]!= 0){
             for(j=2;j<n;j++){
                 if(primos[i]*j > n)
