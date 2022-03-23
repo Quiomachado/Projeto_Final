@@ -29,16 +29,13 @@ void load_vect(char str_vect[MAX_SIZE][MAX_SIZE], int n){
 
 void sort_vect(char str_vect[MAX_SIZE][MAX_SIZE], int n){
     int i, j, k;
-    for(i=0;i<n-1;i++){
+    for(i=0;i<n;i++){
         for(j=0;j<n-1;j++){
-            for(k=0;k<MAX_SIZE;k++){
-                if(str_vect[j][k]>str_vect[j+1][k]){
-                    char temp[MAX_SIZE];
-                    strcpy(temp,str_vect[j]);
-                    strcpy(str_vect[j],str_vect[j+1]);
-                    strcpy(str_vect[j+1],temp);
-                    break;
-                }
+            if(strcmp(str_vect[j], str_vect[j+1])> 0){
+                char temp[MAX_SIZE];
+                strcpy(temp,str_vect[j]);
+                strcpy(str_vect[j],str_vect[j+1]);
+                strcpy(str_vect[j+1],temp);
             }
         }
     }
