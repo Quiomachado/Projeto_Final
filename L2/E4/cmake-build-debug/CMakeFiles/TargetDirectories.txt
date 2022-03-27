@@ -1,3 +1,0 @@
-C:/Users/henri/Documents/Programacao/L2/E4/cmake-build-debug/CMakeFiles/E4.dir
-C:/Users/henri/Documents/Programacao/L2/E4/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/henri/Documents/Programacao/L2/E4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

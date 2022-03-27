@@ -1,3 +1,0 @@
-C:/Users/henri/Documents/Programação/L2/E7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/henri/Documents/Programação/L2/E7/cmake-build-debug/CMakeFiles/E7.dir
-C:/Users/henri/Documents/Programação/L2/E7/cmake-build-debug/CMakeFiles/edit_cache.dir
