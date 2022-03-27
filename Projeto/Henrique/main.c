@@ -16,11 +16,12 @@ int main(){
     scanf("%d", &n);
     while(n<7 || n>15 || (n%2)==0){
         printf("Nao introduzio um valor valido, introduza um valor impar entre 7 e 15:\n");
-        scanf("%d", &n);
+        scanf("%d ", &n);
     }
     initablueiro(tabuleiro, eixoletras, eixonum, n);
     printabuleiro(tabuleiro, eixoletras, eixonum, n);
     editabuleiro(tabuleiro, n);
+    printabuleiro(tabuleiro, eixoletras, eixonum, n);
 }
 
 void initablueiro(char tabuleiro[16][16],char eixoletras[16], int eixonum[16], int n){
@@ -74,8 +75,30 @@ void printabuleiro(char tabuleiro[16][16],char eixoletras[16], int eixonum[16], 
             printf("%c ", eixoletras[k]);
         }
     }
+    printf("\n");
 }
 
 void editabuleiro(char tabuleiro[16][16], int n){
-    
+    int i, k, x, y, dir;
+    char input[25];
+    scanf("%s", input);
+    x=input[1]-'0';
+    y=input[0]-'@';
+    if(y>26){
+        y=input[0]-'`';
+    }
+    dir=input[2]-'@';
+    for(i=3;i<=n;i++){
+        if(dir==8 || dir==40){
+            while(y<=n){
+                tabuleiro[x][y]=input[i];
+                y++;
+            }
+        }else if(dir==22 || dir==54){
+            while(x<=n){
+                tabuleiro[x][y]=input[i];
+                x++;
+            }
+        }
+    }
 }
