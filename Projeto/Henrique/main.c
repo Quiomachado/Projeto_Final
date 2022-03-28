@@ -5,13 +5,14 @@
 
 void initablueiro(char [16][16],char [16],int [16], int);
 void printabuleiro(char [16][16],char [16],int [16], int);
-void editabuleiro(char [16][16], int);
+void editabuleiro(char [16][16], char [25], int);
 
 int main(){
     char tabuleiro[16][16];
     int eixonum[16];
     char eixoletras[16];
     int n, scan;
+    char input[25];
     printf("Introduza o numero de linhas e colunas, este numero deve ser impar e estar entre 7 e 15:\n");
     scanf("%d", &n);
     while(n<7 || n>15 || (n%2)==0){
@@ -20,7 +21,13 @@ int main(){
     }
     initablueiro(tabuleiro, eixoletras, eixonum, n);
     printabuleiro(tabuleiro, eixoletras, eixonum, n);
-    editabuleiro(tabuleiro, n);
+    printf("Introduza as coordenadas, seguida da orientacao e da palavra: ");
+    scanf("%s", input);
+    editabuleiro(tabuleiro, input, n);
+    printabuleiro(tabuleiro, eixoletras, eixonum, n);
+    printf("Introduza as coordenadas, seguida da orientacao e da palavra: ");
+    scanf("%s", input);
+    editabuleiro(tabuleiro, input, n);
     printabuleiro(tabuleiro, eixoletras, eixonum, n);
 }
 
@@ -78,12 +85,10 @@ void printabuleiro(char tabuleiro[16][16],char eixoletras[16], int eixonum[16], 
     printf("\n");
 }
 
-void editabuleiro(char tabuleiro[16][16], int n){
+void editabuleiro(char tabuleiro[16][16], char input[25], int n){
     int i=3, k, x, x2=0, y, dir, len, len_palavra, count=-1, multi=1, tempx, tempy;
-    char input[25];
-    scanf("%s", input);
     len=strlen(input);
-    len_palavra=len-3;
+    len_palavra=len-4;
     x=input[1]-'0';
     y=input[0]-'@';
     if(y>26){
@@ -94,8 +99,12 @@ void editabuleiro(char tabuleiro[16][16], int n){
         x2=(input[2]-'0')*10;
         x=x+x2;
         dir=input[3]-'@';
-        len_palavra=len-4;
+        len_palavra=len-5;
         i=4;
+    }
+    if(x>n || y>n){
+        printf("Introduziu coordenadas que nao pertencem!");
+        return;
     }
     tempy=y;
     tempx=x;
@@ -113,25 +122,155 @@ void editabuleiro(char tabuleiro[16][16], int n){
                         }
                         y--;
                     }
-                    break;
+                    return;
                 }
+                /*if(tabuleiro[x][y]!='.' && tabuleiro[x][y]!='$' && tabuleiro[x][y]!='2' && tabuleiro[x][y]!='3' && tabuleiro[x][y]!=input[i]){
+                    printf("A sua palavra nao utiliza um carater ja colocado anteriormente!");
+                    return;
+                }*/
                 tabuleiro[x][y]=input[i];
                 if(x==1 && y==1 || x==1 && y==n || x==n && y==1 || x==n && y==n){
                     multi++;
-                }else if(i==k || n-i==k-1){
-                    count++;
+                }else if(x==y || n-x==y-1){
+                    switch(input[i]){
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'l':
+                        case 'n':
+                        case 'o':
+                        case 'r':
+                        case 's':
+                        case 't':
+                        case 'u':
+                            count+=2;
+                            break;
+                        case 'd':
+                        case 'g':
+                            count+=4;
+                            break;
+                        case 'b':
+                        case 'c':
+                        case 'm':
+                        case 'p':
+                            count+=6;
+                            break;
+                        case 'f':
+                        case 'h':
+                        case 'v':
+                        case 'w':
+                        case 'y':
+                            count+=8;
+                            break;
+                        case 'k':
+                            count+=10;
+                            break;
+                        case 'j':
+                        case 'x':
+                            count+=16;
+                            break;
+                        case 'q':
+                        case 'z':
+                            count+=20;
+                            break;
+                    }
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
-                    count+=2;
+                    switch(input[i]){
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'l':
+                        case 'n':
+                        case 'o':
+                        case 'r':
+                        case 's':
+                        case 't':
+                        case 'u':
+                            count+=3;
+                            break;
+                        case 'd':
+                        case 'g':
+                            count+=6;
+                            break;
+                        case 'b':
+                        case 'c':
+                        case 'm':
+                        case 'p':
+                            count+=9;
+                            break;
+                        case 'f':
+                        case 'h':
+                        case 'v':
+                        case 'w':
+                        case 'y':
+                            count+=12;
+                            break;
+                        case 'k':
+                            count+=15;
+                            break;
+                        case 'j':
+                        case 'x':
+                            count+=24;
+                            break;
+                        case 'q':
+                        case 'z':
+                            count+=30;
+                            break;
+                    }
+                }else{
+                    switch(input[i]){
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'l':
+                        case 'n':
+                        case 'o':
+                        case 'r':
+                        case 's':
+                        case 't':
+                        case 'u':
+                            count++;
+                            break;
+                        case 'd':
+                        case 'g':
+                            count+=2;
+                            break;
+                        case 'b':
+                        case 'c':
+                        case 'm':
+                        case 'p':
+                            count+=3;
+                            break;
+                        case 'f':
+                        case 'h':
+                        case 'v':
+                        case 'w':
+                        case 'y':
+                            count+=4;
+                            break;
+                        case 'k':
+                            count+=5;
+                            break;
+                        case 'j':
+                        case 'x':
+                            count+=8;
+                            break;
+                        case 'q':
+                        case 'z':
+                            count+=10;
+                            break;
+                    }
                 }
-                count++;
                 y++, i++;
             }
         }
+    count*=multi;
+    printf("%s %d pontos", input, count);
     }else if(dir==22 || dir==54){
         if(len_palavra>n-x){
             printf("Introduzio uma palavra demasiado grande.");
         }else{
-            while(x<=n,i<=len_palavra){
+            while(x<=n,i<=len){
                 if((((y==(n/2))||y==((n/2)+2))&&(x==2 || x==n-1))||(((x==(n/2))||x==((n/2)+2))&&(y==2 || y==n-1))){
                     printf("Esta palavra usa um espaco proibido!\n");
                     while(x>=tempx){
@@ -141,21 +280,149 @@ void editabuleiro(char tabuleiro[16][16], int n){
                         }
                         x--;
                     }
-                    break;
+                    return;
                 }
+                /*if(tabuleiro[x][y]!='.' && tabuleiro[x][y]!='$' && tabuleiro[x][y]!='2' && tabuleiro[x][y]!='3' && tabuleiro[x][y]!=input[i]){
+                    printf("A sua palavra nao utiliza um carater ja colocado anteriormente!");
+                    return;
+                }*/
                 tabuleiro[x][y]=input[i];
                 if(x==1 && y==1 || x==1 && y==n || x==n && y==1 || x==n && y==n){
                     multi++;
-                }else if(i==k || n-i==k-1){
-                    count++;
+                }else if(x==y || n-x==y-1){
+                    switch(input[i]){
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'l':
+                        case 'n':
+                        case 'o':
+                        case 'r':
+                        case 's':
+                        case 't':
+                        case 'u':
+                            count++;
+                            break;
+                        case 'd':
+                        case 'g':
+                            count+=3;
+                            break;
+                        case 'b':
+                        case 'c':
+                        case 'm':
+                        case 'p':
+                            count+=5;
+                            break;
+                        case 'f':
+                        case 'h':
+                        case 'v':
+                        case 'w':
+                        case 'y':
+                            count+=7;
+                            break;
+                        case 'k':
+                            count+=9;
+                            break;
+                        case 'j':
+                        case 'x':
+                            count+=15;
+                            break;
+                        case 'q':
+                        case 'z':
+                            count+=19;
+                            break;
+                    }
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
-                    count+=2;
+                    switch(input[i]){
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'l':
+                        case 'n':
+                        case 'o':
+                        case 'r':
+                        case 's':
+                        case 't':
+                        case 'u':
+                            count+=2;
+                            break;
+                        case 'd':
+                        case 'g':
+                            count+=5;
+                            break;
+                        case 'b':
+                        case 'c':
+                        case 'm':
+                        case 'p':
+                            count+=8;
+                            break;
+                        case 'f':
+                        case 'h':
+                        case 'v':
+                        case 'w':
+                        case 'y':
+                            count+=11;
+                            break;
+                        case 'k':
+                            count+=14;
+                            break;
+                        case 'j':
+                        case 'x':
+                            count+=23;
+                            break;
+                        case 'q':
+                        case 'z':
+                            count+=29;
+                            break;
+                    }
+                }else{
+                    switch(input[i]){
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'l':
+                        case 'n':
+                        case 'o':
+                        case 'r':
+                        case 's':
+                        case 't':
+                        case 'u':
+                            count++;
+                            break;
+                        case 'd':
+                        case 'g':
+                            count+=2;
+                            break;
+                        case 'b':
+                        case 'c':
+                        case 'm':
+                        case 'p':
+                            count+=3;
+                            break;
+                        case 'f':
+                        case 'h':
+                        case 'v':
+                        case 'w':
+                        case 'y':
+                            count+=4;
+                            break;
+                        case 'k':
+                            count+=5;
+                            break;
+                        case 'j':
+                        case 'x':
+                            count+=8;
+                            break;
+                        case 'q':
+                        case 'z':
+                            count+=10;
+                            break;
+                    }
                 }
-                count++;
                 x++, i++;
             }
         }
-    }
     count*=multi;
-    printf("Essa jogada valeu %d pontos!", count);
+    printf("%s %d pontos", input, count);
+    }
 }
