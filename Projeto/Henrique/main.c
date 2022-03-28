@@ -90,7 +90,7 @@ void editabuleiro(char tabuleiro[16][16], char input[25], int n){
     int i=4, x, x2=0, y, dir, len, len_palavra, count=0, multi=1, tempx, tempy;
     char temptabuleiro[20];
     len=strlen(input);
-    len_palavra=len-5;
+    len_palavra=len-6;
     x=input[1]-'0';
     y=input[0]-'@';
     if(y>26){
@@ -98,10 +98,10 @@ void editabuleiro(char tabuleiro[16][16], char input[25], int n){
     }
     dir=input[2]-'@';
     if(dir<0){
-        x2=(input[2]-'0')*10;
-        x=x+x2;
+        x2=input[2]-'0';
+        x=(x*10)+x2;
         dir=input[3]-'@';
-        len_palavra=len-6;
+        len_palavra=len-7;
         i=5;
     }
     if(x>n || y>n){
