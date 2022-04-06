@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1649266436 source:/media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/main.c
+	"Projeto_Final.h"
+
+1649269077 source:/media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/editabuleiro.c
+	"Projeto_Final.h"
+
+1649265721 /media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/Projeto_Final.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+
+1649266076 source:/media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/printabuleiro.c
+	"Projeto_Final.h"
+
+1649266409 source:/media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/ini_tabuleiro.c
+	"Projeto_Final.h"
+
