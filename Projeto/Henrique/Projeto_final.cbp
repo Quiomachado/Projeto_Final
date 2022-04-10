@@ -31,7 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Projeto_Final.h" />
+		<Unit filename="editabuleiro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ini_tabuleiro.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="opcoes_comando.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="printabuleiro.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
