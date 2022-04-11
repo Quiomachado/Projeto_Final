@@ -7,7 +7,7 @@
 #include <string.h>
 #include <unistd.h>
 
-int get_comando(int , char *[], int, char *);//, char *, char *, char *, char *, char *, char *, char *, char *, char *);
+int get_comando(int , char *[], int*, char *);//, char *, char *, char *, char *, char *, char *, char *, char *, char *);
 void initablueiro(char [16][16],char [16],int [16], int);
 void printabuleiro(char [16][16],char [16],int [16], int);
 void editabuleiro(char [16][16], char [25], int);

@@ -1,6 +1,6 @@
 #include "Projeto_Final.h"
 
-int get_comando(int argc, char *argv[], int num_linhas, char *dicionario)// char *t, char *d, char *l, char *m, char *n, char *i, char *j, char *o, char *r)
+int get_comando(int argc, char *argv[], int *num_linhas, char *dicionario)// char *t, char *d, char *l, char *m, char *n, char *i, char *j, char *o, char *r)
 {
     int opt;
     while((opt=getopt(argc, argv, "ht:d:l:m:n:i:j:o:r:"))!=-1)
@@ -26,7 +26,7 @@ int get_comando(int argc, char *argv[], int num_linhas, char *dicionario)// char
                     printf("Nao introduziu um valor valido para a dimensao.");
                     return 1;
                 }
-                num_linhas=optarg[0];
+                *num_linhas = optarg[0]-'0';
                 break;
             case 'd':
                 dicionario=optarg;

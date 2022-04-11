@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="-t 7x7" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -35,13 +36,13 @@
 		<Unit filename="editabuleiro.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="get_comando.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="ini_tabuleiro.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="opcoes_comando.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="printabuleiro.c">

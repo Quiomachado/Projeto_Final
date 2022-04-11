@@ -17,24 +17,28 @@
 1649266409 source:/media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/ini_tabuleiro.c
 	"Projeto_Final.h"
 
-1649269141 source:/media/sf_Projeto_Final/Projeto/Henrique/editabuleiro.c
+1649715275 source:/media/sf_Projeto_Final/Projeto/Henrique/editabuleiro.c
 	"Projeto_Final.h"
 
-1649627653 /media/sf_Projeto_Final/Projeto/Henrique/Projeto_Final.h
+1649719589 /media/sf_Projeto_Final/Projeto/Henrique/Projeto_Final.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
+	<unistd.h>
 
-1649266409 source:/media/sf_Projeto_Final/Projeto/Henrique/ini_tabuleiro.c
+1649715272 source:/media/sf_Projeto_Final/Projeto/Henrique/ini_tabuleiro.c
 	"Projeto_Final.h"
 
-1649626969 source:/media/sf_Projeto_Final/Projeto/Henrique/main.c
+1649719478 source:/media/sf_Projeto_Final/Projeto/Henrique/main.c
 	"Projeto_Final.h"
 
-1649266076 source:/media/sf_Projeto_Final/Projeto/Henrique/printabuleiro.c
+1649715271 source:/media/sf_Projeto_Final/Projeto/Henrique/printabuleiro.c
 	"Projeto_Final.h"
 
 1649626921 source:/media/sf_Projeto_Final/Projeto/Henrique/opcoes_comando.c
+	"Projeto_Final.h"
+
+1649719444 source:/media/sf_Projeto_Final/Projeto/Henrique/get_comando.c
 	"Projeto_Final.h"
 

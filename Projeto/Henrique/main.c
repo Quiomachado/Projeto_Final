@@ -3,8 +3,9 @@
 int main(int argc, char *argv[])
 {
     char tabuleiro[16][16], eixoletras[16], input[25], *dicionario="/usr/share/dict/words";//, *t=NULL, *d=NULL, *l=NULL, *m=NULL, *n=NULL, *i=NULL, *j=NULL, *o=NULL, *r=NULL;
-    int eixonum[16], num_linhas=9;
-    if(get_comando(argc, argv, num_linhas, dicionario)/*, t, d, l, m, n, i, j, o, r)*/ == 1)
+    int eixonum[16], num_linhas = 9, comando;
+    comando = get_comando(argc, argv, &num_linhas, dicionario);
+    if(comando == 1)
     {
         return 0;
     }
@@ -15,7 +16,6 @@ int main(int argc, char *argv[])
         scanf("%d", &num_linhas);
     }while((num_linhas<7)|| (num_linhas>15) || (num_linhas%2)==0);*/
     initablueiro(tabuleiro, eixoletras, eixonum, num_linhas);
-    fgets(input, 25, stdin); //descartar a mudança de linha do scanf
     do
     {
         editabuleiro(tabuleiro, input, num_linhas);
