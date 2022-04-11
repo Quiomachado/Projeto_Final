@@ -2,17 +2,18 @@
 
 int main(int argc, char *argv[])
 {
-    char tabuleiro[16][16], eixoletras[16], input[25], *t=NULL, *d=NULL, *l=NULL, *m=NULL, *n=NULL, *i=NULL, *j=NULL, *o=NULL, *r=NULL;
-    int eixonum[16], num_linhas;
-    if(get_comando(argc, argv, t, d, l, m, n, i, j, o, r) == 1)
+    char tabuleiro[16][16], eixoletras[16], input[25], *dicionario="/usr/share/dict/words";//, *t=NULL, *d=NULL, *l=NULL, *m=NULL, *n=NULL, *i=NULL, *j=NULL, *o=NULL, *r=NULL;
+    int eixonum[16], num_linhas=9;
+    if(get_comando(argc, argv, num_linhas, dicionario)/*, t, d, l, m, n, i, j, o, r)*/ == 1)
     {
         return 0;
     }
-    do
+    //condicoes(num_linhas, t, d, l, m, n, i, j, o, r);
+    /*do
     {
         printf("Introduza o numero de linhas e colunas, este numero deve ser IMPAR e estar entre 7 e 15:\n");
         scanf("%d", &num_linhas);
-    }while((num_linhas<7)|| (num_linhas>15) || (num_linhas%2)==0);
+    }while((num_linhas<7)|| (num_linhas>15) || (num_linhas%2)==0);*/
     initablueiro(tabuleiro, eixoletras, eixonum, num_linhas);
     fgets(input, 25, stdin); //descartar a mudança de linha do scanf
     do

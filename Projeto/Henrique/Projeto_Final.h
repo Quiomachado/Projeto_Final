@@ -5,10 +5,12 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <unistd.h>
 
-int get_comando(int argc, char *argv[], char *t, char *d, char *l, char *m, char *n, char *i, char *j, char *o, char *r);
+int get_comando(int , char *[], int, char *);//, char *, char *, char *, char *, char *, char *, char *, char *, char *);
 void initablueiro(char [16][16],char [16],int [16], int);
 void printabuleiro(char [16][16],char [16],int [16], int);
 void editabuleiro(char [16][16], char [25], int);
+//void condicoes(int, char *, char *, char *, char *, char *, char *, char *, char *, char *);
 
 #endif // PROJETO_FINAL_H_INCLUDED
