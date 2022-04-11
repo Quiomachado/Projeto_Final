@@ -2,7 +2,7 @@
 
 int get_comando(int argc, char *argv[], int *num_linhas, char *dicionario)// char *t, char *d, char *l, char *m, char *n, char *i, char *j, char *o, char *r)
 {
-    int opt;
+    int opt, linhas, colunas;
     while((opt=getopt(argc, argv, "ht:d:l:m:n:i:j:o:r:"))!=-1)
     {
         switch (opt)
@@ -21,12 +21,29 @@ int get_comando(int argc, char *argv[], int *num_linhas, char *dicionario)// cha
                 return 1;
 
             case 't':
-                if((optarg[0] != optarg[2]) || ((optarg[0] -'0') < 7) || ((optarg[0] - '0') > 15) || (((optarg[0] - '0') % 2) == 0))
+                if(optarg[1]>='0' && optarg[1]<='9' && optarg[4]>='0' && optarg[4]<='9')
+                {
+                    linhas = ((optarg[0] - '0')*10)+(optarg[1] - '0');
+                    colunas = ((optarg[3] - '0')*10)+(optarg[4] - '0');
+                }else if(optarg[1]>='0' && optarg[1]<='9' && optarg[4]=='\0')
+                {
+                    linhas = ((optarg[0] - '0')*10)+(optarg[1] - '0');
+                    colunas = optarg[3] - '0';
+                }else if(optarg[1]== 'x' && optarg[3]<='9' && optarg[3]>='0')
+                {
+                    linhas = optarg[0] - '0';
+                    colunas = ((optarg[3] - '0')*10)+(optarg[4] - '0');
+                }else
+                {
+                    linhas = (optarg[0] - '0');
+                    colunas = (optarg[2] - '0');
+                }
+                if((linhas != colunas) || (linhas < 7) || (linhas > 15) || ((linhas % 2) == 0))
                 {
                     printf("Nao introduziu um valor valido para a dimensao.");
                     return 1;
                 }
-                *num_linhas = optarg[0]-'0';
+                *num_linhas = linhas;
                 break;
             case 'd':
                 dicionario=optarg;
