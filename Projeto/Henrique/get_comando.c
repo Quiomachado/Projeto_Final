@@ -1,9 +1,9 @@
 #include "Projeto_Final.h"
 
-int get_comando(int argc, char *argv[], int *num_linhas, char *dicionario)// char *t, char *d, char *l, char *m, char *n, char *i, char *j, char *o, char *r)
+int get_comando(int argc, char *argv[], int *num_linhas, char *dicionario, char *letras, int *n_letras, int *max_jogadas, char *use_tabuleiro, int *modo, char *escrever, char *registar_alg)
 {
     int opt, linhas, colunas;
-    while((opt=getopt(argc, argv, "ht:d:l:m:n:i:j:o:r:"))!=-1)
+    while((opt=getopt(argc, argv, ":ht:d:l:m:n:i:j:o:r:"))!=-1)
     {
         switch (opt)
         {
@@ -46,8 +46,53 @@ int get_comando(int argc, char *argv[], int *num_linhas, char *dicionario)// cha
                 *num_linhas = linhas;
                 break;
             case 'd':
-                dicionario=optarg;
+                dicionario = optarg;
                 break;
+            case 'l':
+                letras = optarg;
+                break;
+            case 'm':
+                *n_letras = optarg[0] -'0';
+                if(optarg[1] != '\0')
+                {
+                   *n_letras = (*n_letras * 10) + (optarg[1] - '0');
+                }
+                if(*n_letras > 20 || *n_letras < 5)
+                {
+                    printf("Nao introduzio um valor valido para o numero de letras");
+                    return 1;
+                }
+                break;
+            case 'n':
+                *max_jogadas = optarg[0] - '0';
+                if(optarg[1] != '\0')
+                {
+                    *max_jogadas = (*max_jogadas * 10) + (optarg[1] - '0');
+                    if(optarg[2] != '\0'){
+                        *max_jogadas = (*max_jogadas * 10) + (optarg[2] - '0');
+                    }
+                }
+                break;
+            case 'i':
+                use_tabuleiro = optarg;
+                break;
+            case 'j':
+                *modo = optarg[0] - '0';
+                if(optarg[1] != '\0' || optarg[0] > 4 || optarg[0] < 0)
+                {
+                    printf("Nao introduzio um modo de jogo valido.");
+                    return 1;
+                }
+                break;
+            case 'o':
+                escrever = optarg;
+                break;
+            case 'r':
+                registar_alg = optarg;
+                break;
+            case ':':
+                printf("Nao introduzio um parametro para o comando %c.", optopt);
+                return 1;
         }
     }
     return 0;
