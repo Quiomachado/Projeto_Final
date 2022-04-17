@@ -1,7 +1,7 @@
 #include "Projeto_Final.h"
 
-void editabuleiro(char tabuleiro[16][16], char input[25], int n){
-    int i=4, x, x2=0, y, dir, len, len_palavra, count=0, multi=1, tempx, tempy;
+void editabuleiro(char *tabuleiro[16], char input[25], int n){
+    int i=4, x, x2=0, y=0, dir=0, len=0, len_palavra=0, count=0, multi=1, tempx=0, tempy=0;
     char temptabuleiro[20];
     len=strlen(input);
     len_palavra=len-6;
@@ -24,7 +24,7 @@ void editabuleiro(char tabuleiro[16][16], char input[25], int n){
     }
     tempy=y;
     tempx=x;
-    if(dir==8 || dir==40){
+    if(dir ==8 || dir == 40){
         if(len_palavra>n-y){
             printf("Introduziu uma palavra demasiado grande.");
         }else{

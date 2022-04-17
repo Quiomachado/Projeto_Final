@@ -1,6 +1,6 @@
 #include "Projeto_Final.h"
 
-void printabuleiro(char tabuleiro[16][16],char eixoletras[16], int eixonum[16], int n){
+void printabuleiro(char *tabuleiro[16],char eixoletras[16], int eixonum[16], int n){
     int i, k;
     printf("\nEstado atual do tabuleiro:\n");
     for(i=1;i<=n;i++){

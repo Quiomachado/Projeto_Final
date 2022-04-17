@@ -1,8 +1,9 @@
 #include "Projeto_Final.h"
 
-void initablueiro(char tabuleiro[16][16],char eixoletras[16], int eixonum[16], int n){
+void initablueiro(char *tabuleiro[16],char eixoletras[16], int eixonum[16], int n){
     int i, k;
     for(i=1;i<=n;i++){ //Para as seguintes coordenadas imprimir: '.'
+        tabuleiro[i] = (char *) calloc(MAX_SIZE, sizeof(char));
         for(k=1;k<=n;k++){
             tabuleiro[i][k]='.';
         }
