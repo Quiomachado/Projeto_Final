@@ -13,7 +13,7 @@ int get_tabuleiro(char *[16], char *, int *, char [16], int [16]);
 int org_dicionario (char *, char *[140], int, int *);
 void initablueiro(char *[16],char [16],int [16], int);
 void printabuleiro(char *[16],char [16],int [16], int);
-void editabuleiro(char *[16], char [25], int);
+void editabuleiro(char *[16], char [5], char [16], int);
 void free_mem(int , char *[16], char *[16], int);
 //void condicoes(int, char *, char *, char *, char *, char *, char *, char *, char *, char *);
 
