@@ -1,20 +1,48 @@
 #include "Projeto_Final.h"
 
-void get_tabuleiro(char *tabuleiro[16], char *use_tabuleiro, int num_linhas)
+int get_tabuleiro(char *tabuleiro[16], char *use_tabuleiro, int *num_linhas, char eixoletras[16], int eixonum[16])
 {
-    char buffer[MAX_SIZE];
-    num_linhas = 0;
+    int i=1, k=1, flag=1;
+    char buffer;
     FILE * tabu;
     if((tabu = fopen(use_tabuleiro, "r")) == NULL)
     {
         printf("Não foi possivel abrir o ficheiro com o tabuleiro.");
-        return;
+        return 1;
     }
-    while(fgets(buffer, MAX_SIZE, tabu) != NULL)
+    tabuleiro[i] = (char *) calloc(MAX_SIZE, sizeof(char));//alocar memoria à primeira linha do tabuleiro
+    while((buffer = fgetc(tabu)) != EOF)//ler o ficheiro carater a carater
     {
-        tabuleiro[num_linhas] = (char *) calloc(MAX_SIZE, sizeof(char));
-        strcpy(tabuleiro[num_linhas], buffer);
-        num_linhas++;
+        if(flag==1 && buffer != ' ')//ignorar o eixo dos numeros atraves de uma flag
+        {
+            flag = 0;
+            continue;
+        }
+        if(buffer >= 'A' && buffer <= 'Z')//ignorar eixo das letras
+        {
+            break;
+        }
+        if(buffer == '\n')
+        {
+            i++;
+            k=1;//reset ao k
+            flag ++; //indica que mudamos de linha para depois se ignorar o primeiro carater
+            tabuleiro[i] = (char *) calloc(MAX_SIZE, sizeof(char)); //aloca memoria para a proxima linha do tabuleiro
+            continue;
+        }else if(buffer != ' ')
+        {
+            tabuleiro[i][k]=buffer;
+            k++;
+        }
     }
+    tabuleiro[i] = 0;//apagar a ultima linha
+    *num_linhas = i-1; //remover a linha das letras
     fclose(tabu);
+    for(i=0;i<=*num_linhas;i++)//cria os eixos
+    {
+        eixonum[i]=i;
+        eixoletras[i]=i+'@'; //Alterar o int para letras
+    }
+    return 0;
 }
+

@@ -2,18 +2,23 @@
 
 void initablueiro(char *tabuleiro[16],char eixoletras[16], int eixonum[16], int n){
     int i, k;
-    for(i=1;i<=n;i++){ //Para as seguintes coordenadas imprimir: '.'
+    for(i=1;i<=n;i++)//Para as seguintes coordenadas imprimir: '.'
+    {
         tabuleiro[i] = (char *) calloc(MAX_SIZE, sizeof(char));
-        for(k=1;k<=n;k++){
+        for(k=1;k<=n;k++)
+        {
             tabuleiro[i][k]='.';
         }
     }
-    for(i=0;i<=n;i++){
+    for(i=0;i<=n;i++)
+    {
         eixonum[i]=i;
         eixoletras[i]=i+'@'; //Alterar o int para letras
     }
-    for(i=1;i<=n;i++){
-        for(k=1;k<=n;k++){
+    for(i=1;i<=n;i++)
+    {
+        for(k=1;k<=n;k++)
+        {
             if(i==k || n-i==k-1){ //Para as seguintes coordenadas imprimir: '2'
                 tabuleiro[i][k]='2';
             }
