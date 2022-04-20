@@ -2,9 +2,9 @@
 
 int main(int argc, char *argv[])
 {
-    char *tabuleiro[16] = {NULL}, eixoletras[16]={0}, input[25]={0}, *dicionario = "/usr/share/dict/words", *letras = "letras.txt", *use_tabuleiro = NULL, *escrever = NULL, *registar_alg = NULL, *dicionario_org[140]={NULL}, coordenadas[5], palavra[16];
+    char *tabuleiro[16] = {NULL}, eixoletras[16]={0}, input[25]={0}, *use_dicionario = "/usr/share/dict/words", *letras = "letras.txt", *use_tabuleiro = NULL, *escrever = NULL, *registar_alg = NULL, *dicionario_org[140]={NULL}, coordenadas[5], palavra[16], *dicionario[140] = {NULL};
     int eixonum[16]={0}, num_linhas = 9, n_letras = 0, max_jogadas = -1, modo = 1, linhas = 0;
-    if(get_comando(argc, argv, &num_linhas, &dicionario, &letras, &n_letras, &max_jogadas, &use_tabuleiro, &modo, &escrever, &registar_alg) == 1)
+    if(get_comando(argc, argv, &num_linhas, &use_dicionario, &letras, &n_letras, &max_jogadas, &use_tabuleiro, &modo, &escrever, &registar_alg) == 1)
     {
         return EXIT_FAILURE;
     }
@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
     {
         initablueiro(tabuleiro, eixoletras, eixonum, num_linhas);
     }
-    org_dicionario(dicionario, dicionario_org, num_linhas, &linhas);
+    get_dicionario(use_dicionario, dicionario, num_linhas, &linhas);
+    org_dicionario(dicionario_org, dicionario, linhas, num_linhas);
     do
     {
         editabuleiro(tabuleiro, coordenadas, palavra, num_linhas);

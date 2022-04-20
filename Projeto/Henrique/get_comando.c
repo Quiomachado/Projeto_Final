@@ -1,6 +1,6 @@
 #include "Projeto_Final.h"
 
-int get_comando(int argc, char *argv[], int *num_linhas, char **dicionario, char **letras, int *n_letras, int *max_jogadas, char **use_tabuleiro, int *modo, char **escrever, char **registar_alg)
+int get_comando(int argc, char *argv[], int *num_linhas, char **use_dicionario, char **letras, int *n_letras, int *max_jogadas, char **use_tabuleiro, int *modo, char **escrever, char **registar_alg)
 {
     int opt, linhas, colunas;
     while((opt=getopt(argc, argv, ":ht:d:l:m:n:i:j:o:r:"))!=-1)
@@ -46,7 +46,7 @@ int get_comando(int argc, char *argv[], int *num_linhas, char **dicionario, char
                 *num_linhas = linhas;
                 break;
             case 'd':
-                *dicionario = optarg;
+                *use_dicionario = optarg;
                 break;
             case 'l':
                 *letras = optarg;

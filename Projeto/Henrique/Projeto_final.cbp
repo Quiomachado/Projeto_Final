@@ -45,6 +45,9 @@
 		<Unit filename="get_comando.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="get_dicionario.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="get_tabuleiro.c">
 			<Option compilerVar="CC" />
 		</Unit>

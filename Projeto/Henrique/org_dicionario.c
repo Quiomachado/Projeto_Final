@@ -1,46 +1,49 @@
 #include "Projeto_Final.h"
 
-int org_dicionario (char *dicionario, char *dicionario_org[140], int num_linhas, int *linhas)
+int org_dicionario(char *dicionario_org[140], char *dicionario[140], int linhas, int num_linhas)
 {
-    int i = 0, flag = 0, k = 0;
-    char buffer;
-    FILE * dic;
-    if((dic = fopen(dicionario, "r")) == NULL)
+    int i = 0, k = 0, n = 0, flag = 0, j = 0, s = 0;
+    char *buffer[140] = {NULL};
+    for(i = num_linhas + 1;i >= 2; i--)
     {
-        printf("Nao foi possivel abrir o ficheiro de dicionario.\n");
-        return 1;
-    }
-    dicionario_org[i] = (char *) calloc(MAX_SIZE, sizeof(char));
-    while((buffer = fgetc(dic)) != EOF)
-    {
-        if(buffer < 'a' || buffer > 'z')
+        for(k = 0;k <= linhas; k++)
         {
-            flag++;
-        }
-        if(buffer == '\n')
-        {
-            if(k < 2 || k > num_linhas + 1 || flag != 0)
+            if(i == strlen(dicionario[k]))
             {
-                dicionario_org[i] = 0;
-                i--;
+                buffer[n] = (char *) calloc(i+1, sizeof(char));
+                strcpy(buffer[n], dicionario[k]);
+                n++;
             }
-            i++;
-            k = 0;
-            flag = 0;
-            dicionario_org[i] = (char *) calloc(MAX_SIZE, sizeof(char));
-            continue;
-        }
-        if(flag == 0)
-        {
-            dicionario_org[i][k] = buffer;
-            k++;
-        }
-        if(flag != 0)
-        {
-            dicionario_org[i] = 0;
-            continue;
         }
     }
-    *linhas = i;
+    for(i = 0;i < n; i++)
+    {
+        flag = 0;
+        for(k = 0;k <= num_linhas; k++)
+        {
+            if(buffer[i][k] == '\n' && flag == 0)
+            {
+                dicionario_org[j] = (char*) calloc(k + 1, sizeof(char));
+                for(s = 0; s < k; s++)
+                {
+                    dicionario_org[j][s] = buffer[i][s];
+                }
+                j++;
+                continue;
+            }
+            if(buffer[i][k] < 'a' || buffer[i][k] > 'z')
+            {
+                flag++;
+            }
+        }
+    }
+    for(i = 0; i <= linhas; i++)
+    {
+        free(dicionario[i]);
+    }
+    for(i = 0; i <= n; i++)
+    {
+        free(buffer[i]);
+    }
     return 0;
 }

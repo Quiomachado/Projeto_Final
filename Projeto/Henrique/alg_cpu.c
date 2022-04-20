@@ -1,6 +1,6 @@
 #include "Projeto_Final.h"
 
-void alg_cpu(char *tabuleiro[16], int num_linhas, char *dicionario[140], int linhas, char palavra)
+void alg_cpu(char *tabuleiro[16], int num_linhas, char *dicionario_org[140], int linhas, char palavra)
 {
     int jogada = 1, x = 0, y = 0, i = 0;
     char num, letra, direcao;
@@ -11,7 +11,7 @@ void alg_cpu(char *tabuleiro[16], int num_linhas, char *dicionario[140], int lin
         direcao = 'h';
         for(i = 0; i <= linhas; i++)
         {
-            palavra = dicionario[i];
+            strcpy(palavra, dicionario_org[i]);
         }
     }
 }
