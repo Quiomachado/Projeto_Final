@@ -16,6 +16,5 @@ void initablueiro(char *[16],char [16],int [16], int);
 void printabuleiro(char *[16],char [16],int [16], int);
 void editabuleiro(char *[16], char [5], char [16], int);
 void free_mem(int , char *[16], char *[16], int);
-//void condicoes(int, char *, char *, char *, char *, char *, char *, char *, char *, char *);
 
 #endif // PROJETO_FINAL_H_INCLUDED
