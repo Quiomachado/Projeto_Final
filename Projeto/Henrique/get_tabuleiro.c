@@ -1,8 +1,8 @@
 #include "Projeto_Final.h"
 
-int get_tabuleiro(char *tabuleiro[16], char *use_tabuleiro, int *num_linhas, char eixoletras[16], int eixonum[16])
+int get_tabuleiro(char *tabuleiro[16], char *use_tabuleiro, int *num_linhas, char eixoletras[16], int eixonum[16], int *jogada)
 {
-    int i=1, k=1, flag=1;
+    int i=1, k=1, flag=1, meio = 0;
     char buffer;
     FILE * tabu;
     if((tabu = fopen(use_tabuleiro, "r")) == NULL)
@@ -42,6 +42,11 @@ int get_tabuleiro(char *tabuleiro[16], char *use_tabuleiro, int *num_linhas, cha
     {
         eixonum[i]=i;
         eixoletras[i]=i+'@'; //Alterar o int para letras
+    }
+    meio = (*num_linhas/2) + 1;
+    if(tabuleiro[meio][meio] <= 'z' && tabuleiro[meio][meio] >= 'a')
+    {
+        *jogada = 2;
     }
     return 0;
 }

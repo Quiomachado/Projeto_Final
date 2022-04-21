@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-d /home/kubuntu/Desktop/sf_Quio/Exemplos2/pt-verysmall.txt -t 7x7 -j 2" />
+				<Option parameters="-d /home/kubuntu/Desktop/sf_Quio/Exemplos2/pt-verysmall.txt -t 7x7 -j 2 -n 12 -o final.txt  -r registo.txt" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -61,6 +61,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="org_dicionario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="print_file.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="printabuleiro.c">

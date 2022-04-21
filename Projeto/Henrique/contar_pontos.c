@@ -35,7 +35,7 @@ int contar_pontos (char palavra[16], char *tabuleiro[16], int x, int y , int dir
                     count++;
                 }else if((x==1 && y==1) || (x==1 && y==n) || (x==n && y==1) || (x==n && y==n)){
                     count++;
-                    multi++;
+                    multi*=2;
                 }else if(x==y || n-x==y-1){
                     count+=2;
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
@@ -50,7 +50,7 @@ int contar_pontos (char palavra[16], char *tabuleiro[16], int x, int y , int dir
                     count+=2;
                 }else if((x==1 && y==1) || (x==1 && y==n) || (x==n && y==1) || (x==n && y==n)){
                     count+=2;
-                    multi++;
+                    multi*=2;
                 }else if(x==y || n-x==y-1){
                     count+=4;
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
@@ -67,7 +67,7 @@ int contar_pontos (char palavra[16], char *tabuleiro[16], int x, int y , int dir
                     count+=3;
                 }else if((x==1 && y==1) || (x==1 && y==n) || (x==n && y==1) || (x==n && y==n)){
                     count+=3;
-                    multi++;
+                    multi*=2;
                 }else if(x==y || n-x==y-1){
                     count+=6;
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
@@ -85,7 +85,7 @@ int contar_pontos (char palavra[16], char *tabuleiro[16], int x, int y , int dir
                     count+=4;
                 }else if((x==1 && y==1) || (x==1 && y==n) || (x==n && y==1) || (x==n && y==n)){
                     count+=4;
-                    multi++;
+                    multi*=2;
                 }else if(x==y || n-x==y-1){
                     count+=8;
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
@@ -99,7 +99,7 @@ int contar_pontos (char palavra[16], char *tabuleiro[16], int x, int y , int dir
                     count+=5;
                 }else if((x==1 && y==1) || (x==1 && y==n) || (x==n && y==1) || (x==n && y==n)){
                     count+=5;
-                    multi++;
+                    multi*=2;
                 }else if(x==y || n-x==y-1){
                     count+=10;
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
@@ -114,7 +114,7 @@ int contar_pontos (char palavra[16], char *tabuleiro[16], int x, int y , int dir
                     count+=8;
                 }else if((x==1 && y==1) || (x==1 && y==n) || (x==n && y==1) || (x==n && y==n)){
                     count+=8;
-                    multi++;
+                    multi*=2;
                 }else if(x==y || n-x==y-1){
                     count+=16;
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
@@ -129,7 +129,7 @@ int contar_pontos (char palavra[16], char *tabuleiro[16], int x, int y , int dir
                     count+=10;
                 }else if((x==1 && y==1) || (x==1 && y==n) || (x==n && y==1) || (x==n && y==n)){
                     count+=10;
-                    multi++;
+                    multi*=2;
                 }else if(x==y || n-x==y-1){
                     count+=20;
                 }else if(((y==(n/2)+1)&&(x==1 || x==n))||((x==(n/2)+1)&&(y==1 || y==n))){
