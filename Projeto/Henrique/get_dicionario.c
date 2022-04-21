@@ -2,7 +2,7 @@
 
 int get_dicionario (char *use_dicionario, char *dicionario[140], int num_linhas, int *linhas)
 {
-    int i = 0, flag = 0, k = 0, size = 0;
+    int k = 0;
     char buffer[MAX_SIZE];
     FILE * dic;
     if((dic = fopen(use_dicionario, "r")) == NULL)

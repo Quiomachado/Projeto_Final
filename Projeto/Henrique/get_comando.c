@@ -78,7 +78,7 @@ int get_comando(int argc, char *argv[], int *num_linhas, char **use_dicionario, 
                 break;
             case 'j':
                 *modo = optarg[0] - '0';
-                if(optarg[1] != '\0' || optarg[0] > 4 || optarg[0] < 0)
+                if(optarg[1] != '\0' || *modo > 4 || *modo < 0)
                 {
                     printf("Nao introduzio um modo de jogo valido.");
                     return 1;

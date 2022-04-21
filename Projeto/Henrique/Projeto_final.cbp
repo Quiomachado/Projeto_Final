@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-d /home/kubuntu/Desktop/sf_Quio/Exemplos2/pt-small.txt" />
+				<Option parameters="-d /home/kubuntu/Desktop/sf_Quio/Exemplos2/pt-verysmall.txt -t 7x7 -j 2" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -34,6 +34,9 @@
 		</Compiler>
 		<Unit filename="Projeto_Final.h" />
 		<Unit filename="alg_cpu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="contar_pontos.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="editabuleiro.c">
@@ -61,6 +64,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="printabuleiro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="verificar_palavra.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
