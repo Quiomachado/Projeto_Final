@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-d /home/kubuntu/Desktop/sf_Quio/Exemplos2/pt-small.txt" />
+				<Option parameters="-d /home/kubuntu/Desktop/sf_Quio/Exemplos2/pt-verysmall.txt -t 7x7 -j 2 -n 12 -o final.txt  -r registo.txt" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -36,6 +36,9 @@
 		<Unit filename="alg_cpu.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="contar_pontos.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="editabuleiro.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -43,6 +46,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="get_comando.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="get_dicionario.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="get_tabuleiro.c">
@@ -57,7 +63,13 @@
 		<Unit filename="org_dicionario.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="print_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="printabuleiro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="verificar_palavra.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />
