@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-d /home/kubuntu/Desktop/sf_Quio/Exemplos2/pt-verysmall.txt -t 7x7 -j 2 -n 12 -o final.txt  -r registo.txt" />
+				<Option parameters="-d C:\Users\henri\Downloads\exemplos2\pt-verysmall.txt -t 7x7 -j 2 -n 12 -o final.txt  -r registo.txt" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>

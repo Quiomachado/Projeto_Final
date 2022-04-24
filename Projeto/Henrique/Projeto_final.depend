@@ -66,29 +66,29 @@
 	"Projeto_Final.h"
 	"Projeto_Final.h"
 
-1650054417 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\editabuleiro.c
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\editabuleiro.c
 	"Projeto_Final.h"
 
-1650113819 c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\projeto_final.h
+1650657742 c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\projeto_final.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<unistd.h>
 
-1650054417 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\ini_tabuleiro.c
+1650401394 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\ini_tabuleiro.c
 	"Projeto_Final.h"
 
-1650054417 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\printabuleiro.c
+1650401399 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\printabuleiro.c
 	"Projeto_Final.h"
 
-1650085092 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\get_comando.c
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\get_comando.c
 	"Projeto_Final.h"
 
-1650054417 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\main.c
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\main.c
 	"Projeto_Final.h"
 
-1650054170 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\get_tabuleiro.c
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\get_tabuleiro.c
 	"Projeto_Final.h"
 
 1650116763 source:/media/sf_Projeto_Final/Projeto/Henrique/get_tabuleiro.c
@@ -142,5 +142,26 @@
 	"Projeto_Final.h"
 
 1650550088 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/print_file.c
+	"Projeto_Final.h"
+
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\alg_cpu.c
+	"Projeto_Final.h"
+
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\contar_pontos.c
+	"Projeto_Final.h"
+
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\get_dicionario.c
+	"Projeto_Final.h"
+
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\org_dicionario.c
+	"Projeto_Final.h"
+
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\print_file.c
+	"Projeto_Final.h"
+
+1650657742 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\verificar_palavra.c
+	"Projeto_Final.h"
+
+1650401397 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\free_mem.c
 	"Projeto_Final.h"
 
