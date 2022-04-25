@@ -2,7 +2,7 @@
 1649266436 source:/media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/main.c
 	"Projeto_Final.h"
 
-1650115660 inal.h"
+1650401397 inal.h"
 
 1649269077 source:/media/sf_Projeto_Final/Projeto/Henrique/Projeto_final/editabuleiro.c
 	"Projeto_Final.h"
@@ -163,5 +163,51 @@
 	"Projeto_Final.h"
 
 1650401397 source:c:\users\henri\onedrive\documents\projeto_final\projeto\henrique\free_mem.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/alg_cpu.c
+	"Projeto_Final.h"
+
+1650559268 /media/sf_Quio/Projeto_Final/Projeto/Henrique/Projeto_Final.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<unistd.h>
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/contar_pontos.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/editabuleiro.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/free_mem.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/get_comando.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/get_dicionario.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/get_tabuleiro.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/ini_tabuleiro.c
+	"Projeto_Final.h"
+
+1650913516 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/main.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/print_file.c
+	"Projeto_Final.h"
+
+1650559268 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/printabuleiro.c
+	"Projeto_Final.h"
+
+1650906067 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/verificar_palavra.c
+	"Projeto_Final.h"
+
+1650913230 source:/media/sf_Quio/Projeto_Final/Projeto/Henrique/org_dicionario.c
 	"Projeto_Final.h"
 

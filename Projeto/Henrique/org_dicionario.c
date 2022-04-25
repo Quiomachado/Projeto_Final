@@ -10,7 +10,7 @@ int org_dicionario(char *dicionario_org[140], char *dicionario[140], int *linhas
         {
             if(i == strlen(dicionario[k]))
             {
-                buffer[n] = (char *) calloc(i + 2, sizeof(char));
+                buffer[n] = (char *) calloc(MAX_SIZE + 1, sizeof(char));
                 strcpy(buffer[n], dicionario[k]);
                 n++;
             }
@@ -23,7 +23,7 @@ int org_dicionario(char *dicionario_org[140], char *dicionario[140], int *linhas
         {
             if(buffer[i][k] == '\n' && flag == 0)
             {
-                dicionario_org[j] = (char*) calloc(k + 1, sizeof(char));
+                dicionario_org[j] = (char*) calloc(MAX_SIZE + 1, sizeof(char));
                 for(s = 0; s < k; s++)
                 {
                     dicionario_org[j][s] = buffer[i][s];
@@ -46,5 +46,7 @@ int org_dicionario(char *dicionario_org[140], char *dicionario[140], int *linhas
         free(buffer[i]);
     }
     *linhas = j - 1;
+    /*for(i = 0;i <= *linhas;i++)
+        printf("%s\n", dicionario_org[i]);*/
     return 0;
 }

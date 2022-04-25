@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
             printabuleiro(tabuleiro, eixoletras, eixonum, num_linhas);
             jogada ++;
         }
-        if(max_jogadas == jogada && escrever != NULL)
+        if(escrever != NULL)
         {
             print_file(tabuleiro, escrever, num_linhas, eixoletras, eixonum);
         }
