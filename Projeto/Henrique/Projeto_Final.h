@@ -6,7 +6,7 @@
 #include <math.h>
 #include <string.h>
 #include <unistd.h>
-#define MAX_SIZE 140
+#define MAX_SIZE 150
 
 int get_comando(int , char *[], int *, char **, char **, int *, int *, char **, int *, char **, char **);
 int get_tabuleiro(char *[16], char *, int *, char [16], int [16], int *);

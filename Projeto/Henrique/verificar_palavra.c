@@ -22,20 +22,20 @@ int ver_palavra (char coordenadas[5], char palavra[16], int n, char *tabuleiro[1
         }
     }
     if(x>n || y>n){
-        printf("Introduziu coordenadas que nao pertencem!\n");
+        //printf("Introduziu coordenadas que nao pertencem!\n");
         return 1;
     }
     tempy=y;
     tempx=x;
     if(dir ==8 || dir == 40){
         if(len_palavra>n-y){
-            printf("Introduziu uma palavra demasiado grande.\n");
+            //printf("Introduziu uma palavra demasiado grande.\n");
             return 1;
         }else{
             while(y<=n && i<=len){
                 temptabuleiro[y]=tabuleiro[x][y];
-                if((((y==(n/2))||y==((n/2)+2))&&(x==2 || x==n-1))||(((x==(n/2))||x==((n/2)+2))&&(y==2 || y==n-1))){
-                    printf("Esta palavra usa um espaco proibido!\n");
+                if(tabuleiro[x][y] == '#'){
+                    //printf("Esta palavra usa um espaco proibido!\n");
                     while(y>=tempy){
                         tabuleiro[x][y]=temptabuleiro[y];
                         y--;
@@ -43,7 +43,7 @@ int ver_palavra (char coordenadas[5], char palavra[16], int n, char *tabuleiro[1
                     return 1;
                 }
                 if(tabuleiro[x][y]!='.' && tabuleiro[x][y]!='$' && tabuleiro[x][y]!='2' && tabuleiro[x][y]!='3' && tabuleiro[x][y]!=palavra[i]){
-                    printf("A sua palavra nao utiliza um carater ja colocado anteriormente!\n");
+                    //printf("A sua palavra nao utiliza um carater ja colocado anteriormente!\n");
                     return 1;
                 }
                 if(jogada != 1 && (tabuleiro[x][y]=='.' || tabuleiro[x][y]=='$' || tabuleiro[x][y]=='2' || tabuleiro[x][y]=='3'))
@@ -59,7 +59,7 @@ int ver_palavra (char coordenadas[5], char palavra[16], int n, char *tabuleiro[1
         }
         if(jogada != 1 && flag == 0)
         {
-            printf("A sua palavra nao utiliza uma palavra ja introduzida.\n %d", flag);
+            //printf("A sua palavra nao utiliza uma palavra ja introduzida.\n %d", flag);
             return 1;
         }
         if((tempy - 1) != 0 && tabuleiro[x][tempy - 1] <= 'z' && tabuleiro[x][tempy - 1] >= 'a')
@@ -70,13 +70,13 @@ int ver_palavra (char coordenadas[5], char palavra[16], int n, char *tabuleiro[1
         }
     }else if(dir==22 || dir==54) {
         if (len_palavra > n - x) {
-            printf("Introduzio uma palavra demasiado grande.\n");
+            //printf("Introduzio uma palavra demasiado grande.\n");
             return 1;
         } else {
             while (x <= n && i <= len) {
                 temptabuleiro[x] = tabuleiro[x][y];
-                if ((((y == (n / 2)) || y == ((n / 2) + 2)) && (x == 2 || x == n - 1)) || (((x == (n / 2)) || x == ((n / 2) + 2)) && (y == 2 || y == n - 1))) {
-                    printf("Esta palavra usa um espaco proibido!\n");
+                if (tabuleiro[x][y] == '#'){
+                    //printf("Esta palavra usa um espaco proibido!\n");
                     while (x >= tempx) {
                         tabuleiro[x][y] = temptabuleiro[x];
                         x--;
@@ -84,7 +84,7 @@ int ver_palavra (char coordenadas[5], char palavra[16], int n, char *tabuleiro[1
                     return 1;
                 }
                 if (tabuleiro[x][y] != '.' && tabuleiro[x][y] != '$' && tabuleiro[x][y] != '2' && tabuleiro[x][y] != '3' && tabuleiro[x][y] != palavra[i]) {
-                    printf("A sua palavra nao utiliza um carater ja colocado anteriormente!\n");
+                    //printf("A sua palavra nao utiliza um carater ja colocado anteriormente!\n");
                     return 1;
                 }
                 if (jogada != 1 && (tabuleiro[x][y] == '.' || tabuleiro[x][y] == '$' || tabuleiro[x][y] == '2' || tabuleiro[x][y] == '3')) {
@@ -98,7 +98,7 @@ int ver_palavra (char coordenadas[5], char palavra[16], int n, char *tabuleiro[1
             }
         }
         if (jogada != 1 && flag == 0) {
-            printf("A sua palavra nao utiliza uma palavra ja introduzida.\n");
+            //printf("A sua palavra nao utiliza uma palavra ja introduzida.\n");
             //printf("%d", flag);
             return 1;
         }

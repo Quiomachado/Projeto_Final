@@ -24,7 +24,7 @@ int alg_cpu(char *tabuleiro[16], int num_linhas, char *dicionario_org[140], int 
         dir = 8;
         for(i = 0; i <= linhas; i++)
         {
-            tamanho = strlen(dicionario_org[i]); //remover o bit nulo
+            tamanho = strlen(dicionario_org[i]);
             if(tamanho > (num_linhas / 2))
             {
                 num_posicoes = num_linhas - tamanho + 1;
@@ -96,67 +96,31 @@ int alg_cpu(char *tabuleiro[16], int num_linhas, char *dicionario_org[140], int 
                 dir = 22;
                 for(y = 1;y <= num_linhas;y++)
                 {
-                    for(i = 0; i <= linhas; i++)
+                    for(x = 1;x <= num_linhas - 1;x++)
                     {
-                        tamanho = strlen(dicionario_org[i]); //remover o bit nulo
-                        if(tamanho > (num_linhas / 2))
+                        for(i = 0; i <= linhas; i++)
                         {
-                            num_posicoes = num_linhas - tamanho + 1;
-                            for(k = 1;k <= num_posicoes; k++)
+                            if(ver_palavra(0, dicionario_org[i], num_linhas, tabuleiro, x, y, dir, jogada) == 0)
                             {
-                                x = k;
-                                if(ver_palavra(0, dicionario_org[i], num_linhas, tabuleiro, x, y, dir, jogada) == 0)
+                                pontos = contar_pontos(dicionario_org[i], tabuleiro, x, y, dir, num_linhas, 0);
+                                if(registar_alg != NULL)
                                 {
-                                    pontos = contar_pontos(dicionario_org[i], tabuleiro, x, y, dir, num_linhas, 0);
-                                    if(registar_alg != NULL)
+                                    FILE *registo;
+                                    if((registo = fopen(registar_alg, "a")) == NULL)
                                     {
-                                        FILE *registo;
-                                        if((registo = fopen(registar_alg, "a")) == NULL)
-                                        {
-                                            printf("Não foi possivel criar o ficheiro de registo.\n");
-                                            return 1;
-                                        }
-                                        fprintf(registo, "%c%d%c %s %d pontos.\n", y + '@', x, dir + '@', dicionario_org[i], pontos);
-                                        fclose(registo);
+                                        printf("Não foi possivel criar o ficheiro de registo.\n");
+                                        return 1;
                                     }
-                                    if(pontos > max_pontos)
-                                    {
-                                        max_pontos = pontos;
-                                        max_index = i;
-                                        x_final = x;
-                                        y_final = y;
-                                        dir_final = dir;
-                                    }
+                                    fprintf(registo, "%c%d%c %s %d pontos.\n", y + '@', x, dir + '@', dicionario_org[i], pontos);
+                                    fclose(registo);
                                 }
-                            }
-                        }else if(tamanho <= (num_linhas / 2))
-                        {
-                            num_posicoes = tamanho;
-                            for(k = num_posicoes;k >= 1; k--)
-                            {
-                                x =(((num_linhas / 2) + 1) - k) + 1;
-                                if(ver_palavra(0, dicionario_org[i], num_linhas, tabuleiro, x, y, dir, jogada) == 0)
+                                if(pontos > max_pontos)
                                 {
-                                    pontos = contar_pontos(dicionario_org[i], tabuleiro, x, y, dir, num_linhas, 0);
-                                    if(registar_alg != NULL)
-                                    {
-                                        FILE *registo;
-                                        if((registo = fopen(registar_alg, "a")) == NULL)
-                                        {
-                                            printf("Não foi possivel criar o ficheiro de registo.\n");
-                                            return 1;
-                                        }
-                                        fprintf(registo, "%c%d%c %s %d pontos.\n", y + '@', x, dir + '@', dicionario_org[i], pontos);
-                                        fclose(registo);
-                                    }
-                                    if(pontos > max_pontos)
-                                    {
-                                        max_pontos = pontos;
-                                        max_index = i;
-                                        x_final = x;
-                                        y_final = y;
-                                        dir_final = dir;
-                                    }
+                                    max_pontos = pontos;
+                                    max_index = i;
+                                    x_final = x;
+                                    y_final = y;
+                                    dir_final = dir;
                                 }
                             }
                         }
@@ -167,67 +131,31 @@ int alg_cpu(char *tabuleiro[16], int num_linhas, char *dicionario_org[140], int 
                 dir = 8;
                 for(x = 1;x <= num_linhas;x++)
                 {
-                    for(i = 0; i <= linhas; i++)
+                    for(y = 1;y <= num_linhas - 1;y++)
                     {
-                        tamanho = strlen(dicionario_org[i]); //remover o bit nulo
-                        if(tamanho > (num_linhas / 2))
+                        for(i = 0; i <= linhas; i++)
                         {
-                            num_posicoes = num_linhas - tamanho + 1;
-                            for(k = 1;k <= num_posicoes; k++)
+                            if(ver_palavra(0, dicionario_org[i], num_linhas, tabuleiro, x, y, dir, jogada) == 0)
                             {
-                                y = k;
-                                if(ver_palavra(0, dicionario_org[i], num_linhas, tabuleiro, x, y, dir, jogada) == 0)
+                                pontos = contar_pontos(dicionario_org[i], tabuleiro, x, y, dir, num_linhas, 0);
+                                if(registar_alg != NULL)
                                 {
-                                    pontos = contar_pontos(dicionario_org[i], tabuleiro, x, y, dir, num_linhas, 0);
-                                    if(registar_alg != NULL)
+                                    FILE *registo;
+                                    if((registo = fopen(registar_alg, "a")) == NULL)
                                     {
-                                        FILE *registo;
-                                        if((registo = fopen(registar_alg, "a")) == NULL)
-                                        {
-                                            printf("Não foi possivel criar o ficheiro de registo.\n");
-                                            return 1;
-                                        }
-                                        fprintf(registo, "%c%d%c %s %d pontos.\n", y + '@', x, dir + '@', dicionario_org[i], pontos);
-                                        fclose(registo);
+                                        printf("Não foi possivel criar o ficheiro de registo.\n");
+                                        return 1;
                                     }
-                                    if(pontos > max_pontos)
-                                    {
-                                        max_pontos = pontos;
-                                        max_index = i;
-                                        x_final = x;
-                                        y_final = y;
-                                        dir_final = dir;
-                                    }
+                                    fprintf(registo, "%c%d%c %s %d pontos.\n", y + '@', x, dir + '@', dicionario_org[i], pontos);
+                                    fclose(registo);
                                 }
-                            }
-                        }else if(tamanho <= (num_linhas / 2))
-                        {
-                            num_posicoes = tamanho;
-                            for(k = num_posicoes;k >= 1; k--)
-                            {
-                                y =(((num_linhas / 2) + 1) - k) + 1;
-                                if(ver_palavra(0, dicionario_org[i], num_linhas, tabuleiro, x, y, dir, jogada) == 0)
+                                if(pontos > max_pontos)
                                 {
-                                    pontos = contar_pontos(dicionario_org[i], tabuleiro, x, y, dir, num_linhas, 0);
-                                    if(registar_alg != NULL)
-                                    {
-                                        FILE *registo;
-                                        if((registo = fopen(registar_alg, "a")) == NULL)
-                                        {
-                                            printf("Não foi possivel criar o ficheiro de registo.\n");
-                                            return 1;
-                                        }
-                                        fprintf(registo, "%c%d%c %s %d pontos.\n", y + '@', x, dir + '@', dicionario_org[i], pontos);
-                                        fclose(registo);
-                                    }
-                                    if(pontos > max_pontos)
-                                    {
-                                        max_pontos = pontos;
-                                        max_index = i;
-                                        x_final = x;
-                                        y_final = y;
-                                        dir_final = dir;
-                                    }
+                                    max_pontos = pontos;
+                                    max_index = i;
+                                    x_final = x;
+                                    y_final = y;
+                                    dir_final = dir;
                                 }
                             }
                         }

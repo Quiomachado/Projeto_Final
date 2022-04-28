@@ -46,7 +46,7 @@ int org_dicionario(char *dicionario_org[140], char *dicionario[140], int *linhas
         free(buffer[i]);
     }
     *linhas = j - 1;
-    /*for(i = 0;i <= *linhas;i++)
-        printf("%s\n", dicionario_org[i]);*/
+    for(i = 0;i <= *linhas;i++)
+        printf("%s\n", dicionario_org[i]);
     return 0;
 }
